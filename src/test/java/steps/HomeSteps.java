@@ -45,5 +45,10 @@ public class HomeSteps extends BaseSteps {
                         .size(size)
         );
     }
+
+    @Then("I should see shopping cart counter to be {string}")
+    public void iShouldSeeShoppingCartCounterToBe(String shoppingCartQuantity) {
+        assertThat(homePage.shoppingCartCounter).hasText(shoppingCartQuantity);
+    }
 }
 
