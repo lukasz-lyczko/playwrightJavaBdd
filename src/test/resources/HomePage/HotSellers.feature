@@ -4,3 +4,4 @@ Feature: Search functionality
     Given I am on the LUMA homepage
     When I add "Gray" "Hero Hoodie" in "M" size to cart
     Then I should see "You added Hero Hoodie to your shopping cart." notification
+    And I should see shopping cart counter to be "1"
