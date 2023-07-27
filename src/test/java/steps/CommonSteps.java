@@ -17,4 +17,15 @@ public class CommonSteps extends BaseSteps {
     public void iShouldSeeNotification(String expectedAlertText) {
         assertThat(lumaPage.alert).hasText(expectedAlertText);
     }
+
+    @Then("I should see {string} in my shopping cart")
+    public void iShouldSeeInMyShoppingCart(String productName) {
+        lumaPage.shoppingCartButton.click();
+    }
+
+    @Then("I should see {string} button")
+    public void iShouldSeeButton(String buttonText) {
+        assertThat(lumaPage.button.getByText(buttonText)).isVisible();
+
+    }
 }
