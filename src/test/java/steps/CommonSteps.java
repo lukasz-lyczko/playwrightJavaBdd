@@ -1,5 +1,6 @@
 package steps;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.BasePage;
 
@@ -15,6 +16,7 @@ public class CommonSteps extends BaseSteps {
 
     @Then("I should see {string} notification")
     public void iShouldSeeNotification(String expectedAlertText) {
+        page.pause();
         assertThat(lumaPage.alert).hasText(expectedAlertText);
     }
 
@@ -26,6 +28,11 @@ public class CommonSteps extends BaseSteps {
     @Then("I should see {string} button")
     public void iShouldSeeButton(String buttonText) {
         assertThat(lumaPage.button.getByText(buttonText)).isVisible();
+    }
+
+    @Given("I am on the Landing Page")
+    public void iAmOnTheLandingPage() {
+        landingPage.open();
 
     }
 }

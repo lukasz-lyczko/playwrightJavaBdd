@@ -15,7 +15,7 @@ public class ScenarioContext {
 
     public ScenarioContext() {
         context = browser.newContext(
-                new Browser.NewContextOptions().setBaseURL("https://magento.softwaretestingboard.com")
+                new Browser.NewContextOptions().setBaseURL("https://www.reserved.com/")
         );
 
         context.tracing().start(
