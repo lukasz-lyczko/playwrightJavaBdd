@@ -31,11 +31,10 @@ public class CommonSteps extends BaseSteps {
     @Then("I should see {string} button")
     public void iShouldSeeButton(String buttonText) {
         assertThat(lumaPage.button.getByText(buttonText)).isVisible();
-
     }
 
     @Given("I am on the landing page")
     public void iAmOnTheLandingPage() {
-
+        landingPage.open();
     }
 }

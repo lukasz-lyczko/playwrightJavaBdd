@@ -4,7 +4,7 @@ import io.cucumber.java.en.When;
 import pages.LandingPage;
 
 public class LandingSteps extends BaseSteps {
-    private LandingPage landingPage;
+    private final LandingPage landingPage;
 
     public LandingSteps(ScenarioContext scenarioContext) {
         super(scenarioContext);
@@ -13,6 +13,11 @@ public class LandingSteps extends BaseSteps {
 
     @When("I select {string} from top menu")
     public void iSelectFromTopMenu(String buttonText) {
-        landingPage.selectMenuButton(buttonText);
+        landingPage.selectFromMenu(buttonText);
+    }
+
+    @When("I select {string} and {string} from top menu")
+    public void iSelectFromTopMenu(String buttonText, String submenuButtonText) {
+        landingPage.selectFromMenu(buttonText, submenuButtonText);
     }
 }
