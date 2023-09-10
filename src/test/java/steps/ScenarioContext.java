@@ -1,8 +1,10 @@
 package steps;
 
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.Cookie;
 import enums.SharedInfoTag;
 
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ScenarioContext {
@@ -15,9 +17,12 @@ public class ScenarioContext {
 
     public ScenarioContext() {
         context = browser.newContext(
-                new Browser.NewContextOptions().setBaseURL("https://magento.softwaretestingboard.com")
+                new Browser.NewContextOptions().setBaseURL("https://www.reserved.com/")
         );
-
+        Cookie consentCookie = new Cookie("CookieConsent", "{stamp:%27test==%27%2Cnecessary:true%2Cpreferences:true%2Cstatistics:true%2Cmarketing:true%2Cmethod:%27explicit%27%2Cver:1%2Cutc:1691080348550%2Cregion:%27pl%27}")
+                .setDomain("www.reserved.com")
+                .setPath("/");
+        context.addCookies(List.of(consentCookie));
         context.tracing().start(
                 new Tracing.StartOptions().setScreenshots(true).setSnapshots(true).setSources(true)
         );

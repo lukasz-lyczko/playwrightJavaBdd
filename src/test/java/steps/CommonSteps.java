@@ -1,16 +1,21 @@
 package steps;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.BasePage;
+import pages.LandingPage;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class CommonSteps extends BaseSteps {
     private final BasePage lumaPage;
 
+    private final LandingPage landingPage;
+
     public CommonSteps(ScenarioContext scenarioContext) {
         super(scenarioContext);
         this.lumaPage = new BasePage(page);
+        this.landingPage = new LandingPage(page);
     }
 
     @Then("I should see {string} notification")
@@ -26,6 +31,11 @@ public class CommonSteps extends BaseSteps {
     @Then("I should see {string} button")
     public void iShouldSeeButton(String buttonText) {
         assertThat(lumaPage.button.getByText(buttonText)).isVisible();
+
+    }
+
+    @Given("I am on the landing page")
+    public void iAmOnTheLandingPage() {
 
     }
 }
