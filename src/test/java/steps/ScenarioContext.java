@@ -26,6 +26,8 @@ public class ScenarioContext {
         context.tracing().start(
                 new Tracing.StartOptions().setScreenshots(true).setSnapshots(true).setSources(true)
         );
+        context.setDefaultNavigationTimeout(30000.00d);
+        context.setDefaultTimeout(30000.00d);
 
         page = context.newPage();
     }
