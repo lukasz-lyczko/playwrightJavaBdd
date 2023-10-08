@@ -24,44 +24,27 @@ public class LandingSteps extends BaseSteps {
 
     @When("I select {string} and {string} from top menu")
     public void iSelectFromTopMenu(String buttonText, String submenuButtonText) {
-
         landingPage.selectFromMenu(buttonText, submenuButtonText);
-        // tu wywoluje metode wypisujaca text z naglowka i klikajacą potem w obrazek
-//        landingPage.testPrint();
-//
-//        // tu wywoluje metode ktora ma pobrac i wyswietlic cene bluzki
-//        landingPage.jakaCenabluzki();
-////        page.pause();
-//        landingPage.czujnik();
-//        landingPage.zamykaczOkna();
     }
 
     @Given("I'm on product page {string}")
     public void iMOnProductPage(String url) {
         landingPage.openProductPage(url);
-
-
     }
 
     @When("I click on {string}")
     public void iClickOn(String productName) {
         landingPage.productNameLink.getByText(productName).first().click();
-
-//        page.pause();
-
-
     }
 
     @When("I choose size {string}")
     public void iChooseSize(String size) {
         landingPage.sizeNameButton.getByText(size).click();
-
     }
 
     @When("I add to cart")
     public void iAddToCart() {
         landingPage.addToCartButton.click();
-        System.out.println("sfdgadg");
     }
 
     @Then("I should see confirmation dialog with following heading {string}")
@@ -84,7 +67,6 @@ public class LandingSteps extends BaseSteps {
         landingPage.searchButton.click();
         landingPage.searchInput.fill(searchQuery);
         page.keyboard().press("Enter");
-//        page.pause();
     }
 
     @Then("I should see product containing phrase {string}")
@@ -96,17 +78,16 @@ public class LandingSteps extends BaseSteps {
     }
 
     @Then("I should see following buttons")
-    public void iShouldSeeFollowingButtons(List<String> expectedButtons) {
-//        for (int i = 0; i < expectedButtons.size(); i++) {
-//            assertThat(landingPage.kontoSubButtons.nth(i)).hasText(expectedButtons.get(i));
+    public void iShouldSeeFollowingButtons(List<String> expectedButtonTexts) {
+//        for (int i = 0; i < expectedButtonTexts.size(); i++) {
+//            assertThat(landingPage.accountSubButtons.nth(i)).hasText(expectedButtonTexts.get(i));
 //        }
-        assertThat(landingPage.kontoSubButtons).hasText(expectedButtons.toArray(new String[0]));
+        assertThat(landingPage.accountSubButtons).hasText(expectedButtonTexts.toArray(new String[0]));
 
     }
 
     @When("I hover on the Konto link")
     public void iHoverOnTheLink() {
-        landingPage.kontoButton.hover();
-
+        landingPage.accountButton.hover();
     }
 }

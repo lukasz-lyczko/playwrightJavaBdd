@@ -11,13 +11,12 @@ public class ScenarioContext {
     public Page page;
     public static Playwright playwright = Playwright.create();
     public static Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-    ;
     public BrowserContext context;
     private final ConcurrentHashMap<String, Object> sharedInfo = new ConcurrentHashMap<>();
 
     public ScenarioContext() {
         context = browser.newContext(
-                new Browser.NewContextOptions().setBaseURL("https://www.reserved.com/")
+                new Browser.NewContextOptions().setBaseURL("https://www.reserved.com/pl/pl/")
         );
         Cookie consentCookie = new Cookie("CookieConsent", "{stamp:%27test==%27%2Cnecessary:true%2Cpreferences:true%2Cstatistics:true%2Cmarketing:true%2Cmethod:%27explicit%27%2Cver:1%2Cutc:1691080348550%2Cregion:%27pl%27}")
                 .setDomain("www.reserved.com")

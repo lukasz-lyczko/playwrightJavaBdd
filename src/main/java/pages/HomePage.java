@@ -12,10 +12,6 @@ public class HomePage extends BasePage {
         shoppingCartCounter = page.locator(".counter-number");
     }
 
-    public void open() {
-        page.navigate("/");
-    }
-
     public ProductCard getProductCardLocator(String productName) {
         return new ProductCard(page, productName);
     }

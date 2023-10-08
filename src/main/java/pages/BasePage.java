@@ -19,4 +19,8 @@ public class BasePage extends BaseModule {
         this.button = page.locator("button");
         this.shoppingCartButton = page.locator(".showcart");
     }
+
+    public void open() {
+        page.navigate(".");
+    }
 }

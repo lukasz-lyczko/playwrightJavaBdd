@@ -20,11 +20,6 @@ public class HomeSteps extends BaseSteps {
         homePage = new HomePage(page);
     }
 
-    @Given("I am on the LUMA homepage")
-    public void iAmOnTheLumaHomepage() {
-        homePage.open();
-    }
-
     @When("I add {string} {string} in {string} size to cart")
     public void iAddInSizeToCart(String color, String name, String size) {
         ProductCard productCard = homePage.getProductCardLocator(name);
