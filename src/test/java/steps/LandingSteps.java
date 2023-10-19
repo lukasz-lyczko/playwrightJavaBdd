@@ -90,4 +90,10 @@ public class LandingSteps extends BaseSteps {
     public void iHoverOnTheLink() {
         landingPage.accountButton.hover();
     }
+
+    @When("I check shopping basket")
+    public void iCheckShoppingBasket() {
+        landingPage.basket.click();
+
+    }
 }

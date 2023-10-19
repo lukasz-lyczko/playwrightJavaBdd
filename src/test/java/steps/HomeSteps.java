@@ -27,9 +27,9 @@ public class HomeSteps extends BaseSteps {
         productCard.selectColor(color);
         productCard.selectSize(size);
         productCard.addToCartButton.click();
-        homePage.header.welcomeMessage.first().waitFor(
-                new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE)
-        );
+//        homePage.header.welcomeMessage.first().waitFor(
+//                new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE)
+//        );
 
         scenarioContext.setSharedInfo(
                 SharedInfoTag.PRODUCT,
