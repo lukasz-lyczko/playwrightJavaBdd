@@ -15,7 +15,7 @@ public class Hooks extends BaseSteps {
     }
 
     @AfterAll
-    static void after_all() {
+    public static void afterAll() {
         ScenarioContext.playwright.close();
     }
 
