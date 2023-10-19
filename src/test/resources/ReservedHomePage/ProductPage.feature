@@ -1,7 +1,7 @@
 Feature: Product page
 
   Scenario: Adding product to cart
-    Given I'm on product page "/kobieta/akcesoria/buty"
+    Given I am on product page "/kobieta/akcesoria/buty"
     When I click on "Długie zamszowe kozaki"
     And I choose size "41"
     And I add to cart
@@ -10,6 +10,6 @@ Feature: Product page
     And I should see size of product "41" was added to cart
 
   Scenario: Product search
-    Given I'm on product page "/"
+    Given I am on product page "/"
     When I search for "poncho z golfem"
     Then I should see product containing phrase "poncho z golfem"

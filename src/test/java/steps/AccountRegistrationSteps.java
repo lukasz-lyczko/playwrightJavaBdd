@@ -17,8 +17,8 @@ public class AccountRegistrationSteps extends BaseSteps {
         this.accountRegistrationPage = new AccountRegistrationPage(page);
     }
 
-    @Given("I'm on account registration page")
-    public void iMOnAccountRegistrationPage() {
+    @Given("I am on account registration page")
+    public void iAmOnAccountRegistrationPage() {
         page.navigate("./customer/account/login/#register");
     }
 
@@ -34,16 +34,14 @@ public class AccountRegistrationSteps extends BaseSteps {
 
     @When("I click on {string} button")
     public void iClickOnButton(String buttonText) {
-        accountRegistrationPage
-                .button
+        accountRegistrationPage.button
                 .filter(new Locator.FilterOptions().setHasText(buttonText))
                 .click();
-
     }
 
     @Then("I should see {int} field validation error(s)")
     public void iShouldSeeFieldValidationErrors(int expectedErrorCount) {
-    assertThat(accountRegistrationPage.inputError).hasCount(expectedErrorCount);
+        assertThat(accountRegistrationPage.inputError).hasCount(expectedErrorCount);
     }
 
     @When("I click on checkbox with label {string}")
@@ -56,7 +54,6 @@ public class AccountRegistrationSteps extends BaseSteps {
 
     @Then("I should see the checkbox is checked")
     public void iShouldSeeTheCheckboxIsChecked() {
-       assertThat(checkboxLocator).isChecked();
+        assertThat(checkboxLocator).isChecked();
     }
 }
-

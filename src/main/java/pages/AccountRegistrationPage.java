@@ -16,7 +16,6 @@ public class AccountRegistrationPage extends BasePage {
     public Locator checkbox;
     public Locator inputError;
 
-
     public AccountRegistrationPage(Page page) {
         super(page);
         emailInput = page.locator("#email_id");
@@ -29,7 +28,6 @@ public class AccountRegistrationPage extends BasePage {
         passwordInputError = page.locator("[data-name=\"password\"] [class^='text-field__ErrorMessage']");
         button = page.locator("button");
         checkbox = page.locator("[class^='checkbox-field']");
-        inputError = page.locator(".invalid>div");
-
+        inputError = page.locator(".invalid > div");
     }
 }

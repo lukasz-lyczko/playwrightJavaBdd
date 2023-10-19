@@ -11,6 +11,7 @@ public class BasePage extends BaseModule {
         super(page);
         basket = page.getByTestId("cart-button");
     }
+
     public void open() {
         page.navigate(".");
     }

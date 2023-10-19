@@ -10,9 +10,8 @@ public class BasketPage extends BasePage {
 
     public BasketPage(Page page) {
         super(page);
-        headline = page.locator("[class^=\"headline\"]");
-        button = page.locator("[class^=\"primary__PrimaryButtonComponent\"]");
+        headline = page.locator("[class^='headline'");
+        button = page.locator("[class^='primary__PrimaryButtonComponent']");
         link = page.locator("a[href]");
-
     }
 }

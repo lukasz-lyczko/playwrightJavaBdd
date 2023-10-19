@@ -27,8 +27,8 @@ public class LandingSteps extends BaseSteps {
         landingPage.selectFromMenu(buttonText, submenuButtonText);
     }
 
-    @Given("I'm on product page {string}")
-    public void iMOnProductPage(String url) {
+    @Given("I am on product page {string}")
+    public void iAmOnProductPage(String url) {
         landingPage.openProductPage(url);
     }
 
@@ -83,7 +83,6 @@ public class LandingSteps extends BaseSteps {
 //            assertThat(landingPage.accountSubButtons.nth(i)).hasText(expectedButtonTexts.get(i));
 //        }
         assertThat(landingPage.accountSubButtons).hasText(expectedButtonTexts.toArray(new String[0]));
-
     }
 
     @When("I hover on the Konto link")
@@ -94,6 +93,5 @@ public class LandingSteps extends BaseSteps {
     @When("I check shopping basket")
     public void iCheckShoppingBasket() {
         landingPage.basket.click();
-
     }
 }

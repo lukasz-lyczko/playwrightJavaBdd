@@ -19,14 +19,12 @@ public class Hooks extends BaseSteps {
         ScenarioContext.playwright.close();
     }
 
-
     @After
     public void after(Scenario scenario) {
         String scenarioTraceName = scenario.getName().toLowerCase(Locale.ROOT).replace(" ", "-");
         this.scenarioContext.context.tracing().stop(new Tracing.StopOptions()
                 .setPath(Paths.get("target", "results", scenarioTraceName + "-trace.zip")));
         this.scenarioContext.context.close();
-
         this.scenarioContext.cleanUp();
     }
 }

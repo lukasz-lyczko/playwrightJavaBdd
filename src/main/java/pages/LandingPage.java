@@ -48,5 +48,3 @@ public class LandingPage extends BasePage {
         page.navigate("." + url);
     }
 }
-
-
